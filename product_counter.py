@@ -4,9 +4,12 @@ import json
 import pandas as pd
 import numpy as np
 
+allowed_types = ["Wallet", "Lamp"]
+
 with open('products.json') as data_file:    
     data = json.load(data_file)
 
 df = pd.DataFrame(data['products'])
 
-print(df.head())
+test = df[df.product_type.isin(allowed_types)]
+print(test)
