@@ -11,5 +11,4 @@ with open('products.json') as data_file:
 
 df = pd.DataFrame(data['products'])
 
-test = df[df.product_type.isin(allowed_types)]
-print(test)
+wanted_products = df[df.product_type.isin(allowed_types)]
